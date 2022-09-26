@@ -126,16 +126,37 @@ int main() {
             for(int i = 0; i < NUM_CHARS; i++) {
                 newString[i] = *(buffer + i);
             }
+            strtok(newString, "\n");
+            printf("%s", newString);
 
             // char item[NUM_CHARS];
             // fgets(item, NUM_CHARS, stdin);
+            
             for(int i = 0;i < 6; i++) {
+                printf("%s",items[i]->name);
                 if(strcmp(items[i]->name, newString) == 0) {
+                    printf("%s", items[i]->name);
+                    if(items[i]->next == NULL) {
+                        items[i]->next = avatar->inventory;
+                        avatar->inventory = items[i];
+                    }
+                    else {
+                        items[i]->next->next
+                        while(items[i]->next ){
+                            
+                        }
+                    }
+
+
+
+
                     if(i == 0) {
+                        printf("test1");
                         items[i]->next = avatar->inventory;
                         break;
                     }
                     else {
+                        printf("test2");
                         items[i-1]->next = items[i+1];
                         items[i]->next = avatar->inventory;
                         break;
